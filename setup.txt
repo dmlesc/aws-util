@@ -1,0 +1,62 @@
+
+
+================================
+ Create Shared Credentials File
+================================
+
+https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/loading-node-credentials-shared.html
+  
+cd ~
+mkdir .aws
+nano .aws/credentials
+  [default]
+  aws_access_key_id = <YOUR_ACCESS_KEY_ID>
+  aws_secret_access_key = <YOUR_SECRET_ACCESS_KEY>
+  
+git clone https://github.com/il-davidlurth/aws-util.git
+cd aws-util
+
+npm init
+npm install aws-sdk --save
+
+
+=======
+ Usage
+=======
+
+--- s3-downloadFiles.js ---
+node s3-downloadFiles.js <profile> <bucket> <dst_path> <prefix>
+
+--- s3-clearBucket.js ---
+node s3-clearBucket.js <profile> <bucket>
+
+--- s3-logs2elasticsearch.js ---
+node s3-logs2elasticsearch.js <env> <src_path> <dst_path> <index>
+
+
+--- elb-logs2elasticsearch.js ---
+node elb-logs2elasticsearch.js <env> <src_path> <dst_path> <index>
+
+
+--- sdb-listDomains.js ---
+node sbd-listDomains.js <profile> 
+
+--- sdb-createDomains.js ---
+node sbd-createDomains.js <profile> 
+
+--- sdb-deleteDomains.js ---
+node sbd-deleteDomains.js <profile> 
+
+--- sdb-backup.js ---
+node sbd-backup.js <profile> 
+
+--- sdb-restore.js ---
+node sbd-restore.js <backup_path> 
+
+
+--- moveFiles.js ---
+node moveFiles.js <src_path> <dst_path> 
+
+--- mergeFiles.js ---
+node moveFiles.js <src_path> <dst_path> 
+
